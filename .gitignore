@@ -1,5 +1,6 @@
 # Composer files
 /vendor/
+/public/vendor/
 
 # built application files
 *.apk

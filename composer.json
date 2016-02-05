@@ -1,7 +1,19 @@
 {
-    "require": {
-        "slim/slim": "^3.0",
-        "nategood/httpful": "^0.2.20",
-        "twbs/bootstrap": "^3.3"
-    }
+  "require": {
+    "slim/slim": "^3.0",
+    "nategood/httpful": "^0.2.20",
+    "twbs/bootstrap": "^3.3",
+    "components/jquery": "^2.2",
+    "components/underscore": "^1.8",
+    "components/backbone": "^1.2"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "mkdir -p public/vendor/bootstrap",
+      "cp vendor/components/jquery/jquery.min.js public/vendor",
+      "cp vendor/components/underscore/underscore-min.js public/vendor",
+      "cp vendor/components/backbone/backbone-min.js public/vendor",
+      "cp -R vendor/twbs/bootstrap/dist/ public/vendor/bootstrap"
+    ]
+  }
 }

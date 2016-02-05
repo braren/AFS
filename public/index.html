@@ -1,0 +1,119 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Actor Filmography Search by braren</title>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/custom-style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="jumbotron actor-search">
+        <img src="img/silla-flat-150.png">
+        <h1 class="title-search">Actor Filmography Search</h1>
+        <input type="text" class="input_txt form-control" id="txt_actor_search" name="txt_actor_search">
+        <br/>
+        <div class="lst_suggestion">
+        </div>
+    </div>
+</div> <!-- /container -->
+<div class="container">
+    <div class="jumbotron actor-info">
+
+    </div>
+</div> <!-- /container -->
+
+<script type="text/template" id="tpl_suggestion">
+    <div class="it__suggestion" onclick="new getActorInfo('<%= id %>');">
+        <%= name %>
+    </div>
+</script>
+
+<footer>
+    Copyright &copy; 2016 Brayan Rend&oacute;n - braren
+</footer>
+
+<script type="text/template" id="tpl_actor_info">
+    <div class="row actor-info-show">
+        <div class="col-sm-12">
+            <h1 class="text-center"><%= name %></h1>
+        </div>
+        <div class="col-sm-3">
+            <img src="<%= profile_path %>" style="width: 185px; height: 278px;">
+        </div>
+        <div class="col-sm-9">
+            <div class="col-sm-12 info info-label">
+                Biography
+            </div>
+            <div class="col-sm-12" info info-data>
+                <%= biography %>
+            </div>
+            <div class="col-sm-12 info info-label">
+                Birthday
+            </div>
+            <div class="col-sm-12 info info-data">
+                <%= birthday %>
+            </div>
+            <div class="col-sm-12 info info-label">
+                Place of birth
+            </div>
+            <div class="col-sm-12 info info-data">
+                <%= place_of_birth %>
+            </div>
+        </div>
+        <div class="col-sm-3 info-label">
+            Cast
+        </div>
+        <div class="col-sm-9 info-cast">
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="tpl_info_cast">
+    <div class="col-sm-12 info-cast-item">
+        <div class="col-sm-3">
+            <img src="<%= poster_path %>" style="width: 92px; height: 139px;">
+        </div>
+        <div class="col-sm-9">
+            <div class="col-sm-12 info-data">
+                <%= original_title %>
+            </div>
+            <div class="col-sm-3 info-label">
+                Character
+            </div>
+            <div class="col-sm-9 info-data">
+                <%= character %>
+            </div>
+            <div class="col-sm-3 info-label">
+                Release date
+            </div>
+            <div class="col-sm-9 info-data">
+                <%= release_date %>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="vendor/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/underscore-min.js"></script>
+<script src="vendor/backbone-min.js"></script>
+<!-- App Backbone -->
+<script src="js/models/suggestionModel.js"></script>
+<script src="js/collections/suggestionCollections.js"></script>
+<script src="js/view/suggestionView.js"></script>
+<script src="js/models/actorInfoModel.js"></script>
+<script src="js/view/actorInfoView.js"></script>
+</body>
+</html>

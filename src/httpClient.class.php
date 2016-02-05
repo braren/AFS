@@ -63,7 +63,7 @@ class httpClient
      */
     function getSuggestions($query)
     {
-        $uri = $this->base_url . 'search/person' . $this->api_key . '&query=' . $query;
+        $uri = $this->base_url . 'search/person' . $this->api_key . '&query=' . str_replace(' ', '%20', $query);
         $response = RequestHttpful::get($uri)->send();
 
         $ltsData = json_decode(json_encode($response->body->results), true);

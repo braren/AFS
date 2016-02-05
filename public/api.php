@@ -14,6 +14,8 @@ require __DIR__ . '/../src/httpClient.class.php';
 
 $appAPI = new \Slim\App;
 
+date_default_timezone_set('America/Bogota');
+
 $appAPI->get('/actor/{id_actor}', function (Request $request, Response $response) {
     $httpClient = new httpClient();
 
