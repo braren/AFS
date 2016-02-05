@@ -10,7 +10,12 @@ body {
 }
 
 .title-search {
-    color: #5674A4 !important;
+    color: #525E70 !important;
+}
+
+.title-actor {
+    color: #525E70 !important;
+    text-align: center;
 }
 
 .input_txt {
@@ -18,6 +23,11 @@ body {
     margin-top: 50px !important;
     text-align: center;
     width: 60%;
+}
+
+.it__suggestion:active {
+    background-color: #E6BD70;
+    color: #FBF5E2;
 }
 
 .lst_suggestion {
@@ -49,10 +59,18 @@ body {
 
 .info-label {
     padding-bottom: 0px;
+    font-weight: bold;
+    color: #525E70;
 }
 
 .info-data {
     padding-top: 2px;
+}
+
+.info-cast-title {
+    font-weight: bold;
+    font-size: medium;
+    color: #525E70;
 }
 
 .info-cast-item {
